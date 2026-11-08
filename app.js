@@ -219,7 +219,7 @@ function startCountdown() {
   if (countTimer) clearInterval(countTimer);
   const el = { d: $("#cDays"), h: $("#cHours"), m: $("#cMins"), s: $("#cSecs") };
   const tick = () => {
-    let diff = 0;
+    let diff = TARGET - Date.now();
     if (diff <= 0) { clearInterval(countTimer); countTimer = null; showStage("envelope"); return; }
     el.d.textContent = pad(Math.floor(diff / 864e5));
     el.h.textContent = pad(Math.floor(diff % 864e5 / 36e5));
