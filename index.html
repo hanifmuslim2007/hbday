@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#FEF7E4">
+<title>Happy Birthday, Suhaila 🌸</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg fill='%23F3B6C8'%3E%3Cellipse cx='20' cy='11.5' rx='4.2' ry='7.4'/%3E%3Cellipse cx='20' cy='11.5' rx='4.2' ry='7.4' transform='rotate(72 20 20)'/%3E%3Cellipse cx='20' cy='11.5' rx='4.2' ry='7.4' transform='rotate(144 20 20)'/%3E%3Cellipse cx='20' cy='11.5' rx='4.2' ry='7.4' transform='rotate(216 20 20)'/%3E%3Cellipse cx='20' cy='11.5' rx='4.2' ry='7.4' transform='rotate(288 20 20)'/%3E%3C/g%3E%3Ccircle cx='20' cy='20' r='4' fill='%23FDF7EA'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=8">
+</head>
+<body>
+
+<!-- ============ STAGE 1 · LOADING ============ -->
+<section id="stage-load" class="stage active" aria-label="Memuat">
+  <ul class="particles" data-particles="9" data-max-top="34" aria-hidden="true"></ul>
+  <div class="load-center">
+    <div class="loader-flower" id="loaderFlower" aria-hidden="true"></div>
+    <p class="load-text">Preparing something special for you...</p>
+  </div>
+</section>
+
+<!-- ============ STAGE 2 · SECRET PIN ============ -->
+<section id="stage-pin" class="stage" aria-label="Kode rahasia">
+  <ul class="particles" data-particles="30" data-max-top="96" aria-hidden="true"></ul>
+  <div class="pin-wrap">
+    <div class="pin-badge" id="pinBadge" aria-hidden="true"></div>
+    <div class="pin-card" id="pinCard">
+      <h1 class="pin-title">For You, Suhaila</h1>
+      <p class="pin-sub">Enter our secret code</p>
+      <div class="pin-dots" id="pinDots" aria-live="polite">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      </div>
+      <div class="keypad" id="keypad">
+        <button class="key" data-key="1">1</button>
+        <button class="key" data-key="2">2</button>
+        <button class="key" data-key="3">3</button>
+        <button class="key" data-key="4">4</button>
+        <button class="key" data-key="5">5</button>
+        <button class="key" data-key="6">6</button>
+        <button class="key" data-key="7">7</button>
+        <button class="key" data-key="8">8</button>
+        <button class="key" data-key="9">9</button>
+        <button class="key act" data-key="clear" aria-label="Hapus">&#10005;</button>
+        <button class="key" data-key="0">0</button>
+        <button class="key enter" data-key="submit" aria-label="Masuk">&#8617;</button>
+      </div>
+      <p class="pin-hint">Hint: your special birthday 💕</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STAGE 3 · COUNTDOWN ============ -->
+<section id="stage-count" class="stage" aria-label="Hitung mundur">
+  <ul class="particles" data-particles="12" aria-hidden="true"></ul>
+  <div class="count-inner">
+    <div class="envelope is-static count-env" aria-hidden="true">
+      <div class="env-back"></div>
+      <div class="env-letter"><span class="env-dear">For you ♡</span></div>
+      <div class="env-flap"><div class="env-seal"><span class="seal-flower"></span></div></div>
+      <div class="env-front"></div>
+    </div>
+    <h2 class="count-title">A Little More Time.</h2>
+    <p class="count-sub">Something special is waiting for you. But every beautiful surprise deserves the right moment. Be patient</p>
+    <div class="count-grid" role="timer">
+      <div class="count-box"><span class="count-num" id="cDays">00</span><span class="count-lab">Hari</span></div>
+      <div class="count-box"><span class="count-num" id="cHours">00</span><span class="count-lab">Jam</span></div>
+      <div class="count-box"><span class="count-num" id="cMins">00</span><span class="count-lab">Menit</span></div>
+      <div class="count-box"><span class="count-num" id="cSecs">00</span><span class="count-lab">Detik</span></div>
+    </div>
+    <p class="count-info">The surprise opens on 10 November 2026 &#8226; 00:00 WIB</p>
+  </div>
+</section>
+
+<!-- ============ STAGE 4 · ENVELOPE ============ -->
+<section id="stage-envelope" class="stage" aria-label="Amplop kejutan">
+  <ul class="particles" data-particles="10" aria-hidden="true"></ul>
+  <div class="env-center">
+    <div class="envelope big" id="envelope" role="button" tabindex="0" aria-label="Buka amplop kejutan">
+      <div class="env-back"></div>
+      <div class="env-letter"><span class="env-dear">Dear Suhaila,</span></div>
+      <div class="env-flap"><div class="env-seal"><span class="seal-flower"></span></div></div>
+      <div class="env-front"></div>
+      <div class="bloom" aria-hidden="true"></div>
+    </div>
+    <p class="env-tap" id="envTap">Tap to open</p>
+  </div>
+  <div class="petals" id="petalsLayer" aria-hidden="true"></div>
+</section>
+
+<!-- overlay bunga crossfade -->
+<div id="floralOverlay" aria-hidden="true"></div>
+
+<!-- ============ FLOATING AUDIO WIDGET ============ -->
+<div id="audioWidget" aria-label="Pemutar musik">
+  <button class="aw-main" id="awPlay" aria-label="Play / Pause">
+    <svg class="ic-play" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
+    <svg class="ic-pause" viewBox="0 0 24 24" hidden><path d="M7.5 5h3.4v14H7.5zM13.1 5h3.4v14h-3.4z" fill="currentColor"/></svg>
+  </button>
+  <button class="aw-mute" id="awMute" aria-label="Mute / Unmute">
+    <svg class="ic-vol" viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"/><path d="M15.5 8.8c1.9 1.7 1.9 4.7 0 6.4M17.8 6.5c3.1 2.9 3.1 8.1 0 11" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+    <svg class="ic-mute" viewBox="0 0 24 24" hidden><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"/><path d="M15.3 9.1l5.5 5.8m0-5.8l-5.5 5.8" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/></svg>
+  </button>
+  <div class="aw-title"><b id="awTitle">&mdash;</b><span id="awArtist">&mdash;</span></div>
+</div>
+
+<!-- ============ STAGE 5 · MAIN PAGE ============ -->
+<main id="stage-main" class="stage main-stage">
+
+  <!-- bunga tetap milik tampilan hero (tidak ikut tergulir ke bawah) -->
+  <div class="hero-fixed" id="heroFixed" aria-hidden="true">
+    <ul class="particles" data-particles="12" data-max-top="100"></ul>
+  </div>
+
+  <!-- SECTION 1 · HERO -->
+  <section class="sec hero" id="hero">
+    <ul class="particles" data-particles="8" aria-hidden="true"></ul>
+    <div class="hero-inner reveal">
+      <p class="sec-label">&#10047; YOUR SPECIAL DAY &#10047;</p>
+      <h1 class="hero-title">Happy <em>Birthday</em></h1>
+      <p class="hero-name">Suhaila</p>
+      <p class="hero-tag" id="heroTag">The most beautiful day of the entire year...</p>
+      <span class="hr-line"></span>
+      <p class="hero-date" id="heroDate">10 NOVEMBER</p>
+    </div>
+    <div class="scroll-cue" aria-hidden="true">
+      <svg viewBox="0 0 24 24" class="cue-arrow"><path d="M5 9l7 7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- SECTION 2 · PLAYLIST -->
+  <section class="sec alt" id="playlist">
+    <ul class="particles" data-particles="5" aria-hidden="true"></ul>
+    <header class="sec-head reveal">
+      <p class="sec-label">&mdash; Our Songs &mdash;</p>
+      <h2 class="sec-title">Special Playlist</h2>
+      <p class="sec-sub">A song that perfectly describes you</p>
+    </header>
+    <div class="player-card reveal">
+      <div class="vinyl-wrap">
+        <div class="vinyl" id="vinyl">
+          <span class="v-sheen"></span>
+          <span class="v-label"><span class="v-label-flower" aria-hidden="true"></span></span>
+          <span class="v-hole"></span>
+        </div>
+      </div>
+      <p class="p-track" id="pTrack">&mdash;</p>
+      <p class="p-artist" id="pArtist">&mdash;</p>
+      <div class="p-times"><span id="pCur">0:00</span><span class="p-end"><svg viewBox="0 0 24 24" class="ic-note"><path d="M9 17.5V6l9-2v3.2L11.4 8.7V17.5a2.6 2.6 0 1 1-2.4-2.6z" fill="currentColor"/></svg><span id="pDur">0:00</span></span></div>
+      <input type="range" class="prog" id="prog" min="0" max="100" value="0" step="0.1" aria-label="Progress lagu">
+      <div class="p-controls">
+        <button class="p-btn" id="btnPrev" aria-label="Lagu sebelumnya"><svg viewBox="0 0 24 24"><path d="M7 12l9-6v12zM6 6h2v12H6z" fill="currentColor"/></svg></button>
+        <button class="p-btn main" id="btnPlay" aria-label="Play / Pause">
+          <svg class="ic-play" viewBox="0 0 24 24"><path d="M8.5 5.5v13l10-6.5z" fill="currentColor"/></svg>
+          <svg class="ic-pause" viewBox="0 0 24 24" hidden><path d="M8 5h3v14H8zM13 5h3v14h-3z" fill="currentColor"/></svg>
+        </button>
+        <button class="p-btn" id="btnNext" aria-label="Lagu berikutnya"><svg viewBox="0 0 24 24"><path d="M17 12l-9 6V6zM16 6h2v12h-2z" fill="currentColor"/></svg></button>
+      </div>
+      <ol class="queue" id="queue"></ol>
+    </div>
+  </section>
+
+  <!-- SECTION 3 · BOUQUET -->
+  <section class="sec" id="bouquet">
+    <ul class="particles" data-particles="6" aria-hidden="true"></ul>
+    <header class="sec-head reveal">
+      <p class="sec-label">&mdash; My First Gift &mdash;</p>
+      <h2 class="sec-title"><span class="title-flower" aria-hidden="true"></span>A Digital Bouquet</h2>
+      <p class="sec-sub">Each flower holds a little message just for you</p>
+    </header>
+    <div class="bouquet reveal">
+      <div class="b-field" id="bField"></div>
+      <svg class="b-stems" viewBox="0 0 220 150" aria-hidden="true">
+        <g fill="none" stroke="#2C5942" stroke-width="2.6" stroke-linecap="round">
+          <path d="M110 148 C104 108 92 74 66 40"/><path d="M110 148 C108 104 100 64 86 30"/>
+          <path d="M110 148 C110 100 110 60 110 22"/><path d="M110 148 C112 104 120 64 134 30"/>
+          <path d="M110 148 C116 108 128 74 154 40"/>
+        </g>
+        <g fill="#2C5942">
+          <ellipse cx="94" cy="86" rx="10" ry="4.4" transform="rotate(-38 94 86)"/>
+          <ellipse cx="127" cy="88" rx="10" ry="4.4" transform="rotate(34 127 88)"/>
+          <ellipse cx="82" cy="120" rx="9" ry="4" transform="rotate(-24 82 120)"/>
+          <ellipse cx="139" cy="122" rx="9" ry="4" transform="rotate(22 139 122)"/>
+        </g>
+        <path class="paper-wrap" d="M62 92 L110 148 L158 92 C162 116 150 148 110 148 C70 148 58 116 62 92 Z" fill="#ECDAC4" stroke="#DCD6C0"/>
+        <path d="M92 108 c2-6 8-9 14-8 c6 1 10 5 10 5 l-3 8 l-8-3 l1 6 l-9 2 l1-8 l-7 3 z" fill="#EC9FAC" opacity=".9"/>
+      </svg>
+    </div>
+    <div class="b-quote reveal" id="bQuote">
+      <p class="quote-text" id="quoteText">Ketuk bunga untuk membaca isi pesan disetiap bunganya.</p>
+      <p class="quote-name" id="quoteName"></p>
+    </div>
+  </section>
+
+  <!-- SECTION 4 · LETTER -->
+  <section class="sec alt" id="letter">
+    <ul class="particles" data-particles="5" aria-hidden="true"></ul>
+    <header class="sec-head reveal">
+      <p class="sec-label">&mdash; From My Heart &mdash;</p>
+      <h2 class="sec-title">A Letter For You</h2>
+    </header>
+    <article class="letter reveal">
+      <span class="corner tl" aria-hidden="true"></span><span class="corner tr" aria-hidden="true"></span>
+      <span class="corner bl" aria-hidden="true"></span><span class="corner br" aria-hidden="true"></span>
+      <p class="letter-date">10 November 2026</p>
+      <p class="letter-greet">Dear Suhaila,</p>
+      <p>Pertama-tama happy birthdayy, yaaa. Bertambahnya umur bukan sekadar angka itu bukti udah berhasil melewati begitu banyak hari, yang mudah maupun juga yang berat, dan tetap menjadi orang yang hangat bagi siapa pun di sekitar.</p>
+      <p>Terima kasih ka shuaa udah bisa bertahan sampe hari ini, mulai dari sabarnyaa yang di uji pas ngajar anak-anak siang, punya banyak emosi yang dipendam tapi gabisa di luapin, itu rasanya pasti sakit. Murid-murid ka shua pasti beruntung sekali punya ustadzah kaya ka shua, setiap anak selalu ngerasa punya rumah ke-2 buat mereka.</p>
+      <p class="letter-italic">Di hari spesial ini, aku berdoa semoga ka shua selalu diberikan kesabaran yang lebih, digampangkan untuk menggapai semua mimpinyaa, juga di setiap langkah dan proses dipudayakan dan dipermudah. Dan lagi semoga ka shua selalu dikelilingi orang yang tulus, dan tahun ini membawa lebih banyak senyum daripada airmata.</p>
+      <p>Selamat ulang tahun, Kak Suhaila. Jangan pernah ragu bahwa hari ini berharga, tahun ini, dan semua tahun setelahnya.</p>
+      <blockquote class="ps">Pesan Tambahan - Kalo suatu saat ka shua mulai ragu sama diri sendiri, coba buka lagi halaman ini dan baca pesan-pesannya. Semua kalimat di sini aku sungguh-sungguh, dan aku nggak pernah bohong soal hal-hal yang bagus. 🌸</blockquote>
+      <div class="sig">
+        <p class="sig-say">With all my heart,</p>
+        <p class="sig-name">Hanif Muslim Arafat Yani</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- SECTION 5 · OPEN WHEN -->
+  <section class="sec" id="openwhen">
+    <ul class="particles" data-particles="6" aria-hidden="true"></ul>
+    <header class="sec-head reveal">
+      <p class="sec-label">&mdash; Special Envelopes &mdash;</p>
+      <h2 class="sec-title">Open When... Letters</h2>
+      <p class="sec-sub">Tiga surat kecil untuk hari-hari yang berat. Buka kapan pun kamu butuh 🤍</p>
+    </header>
+    <div class="ow-grid reveal">
+      <button class="ow-card" data-ow="sedih">
+        <span class="ow-icon" aria-hidden="true"></span>
+        <span class="ow-open">Open me</span>
+        <span class="ow-name">Buka saat kamu sedih</span>
+      </button>
+      <button class="ow-card" data-ow="insecure">
+        <span class="ow-icon" aria-hidden="true"></span>
+        <span class="ow-open">Open me</span>
+        <span class="ow-name">Buka saat kamu insecure</span>
+      </button>
+      <button class="ow-card" data-ow="capek">
+        <span class="ow-icon" aria-hidden="true"></span>
+        <span class="ow-open">Open me</span>
+        <span class="ow-name">Buka saat kamu capek</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- SECTION 6 · CLOSING — TIUP LILIN & BUAT DOA (kini di atas guestbook) -->
+  <section class="sec closing" id="closing">
+    <ul class="particles" data-particles="7" aria-hidden="true"></ul>
+    <div class="close-inner reveal">
+      <p class="sec-label">&#10047; WITH ALL MY HEART &#10047;</p>
+      <h2 class="close-title"><em>May your life always be filled with flowers</em></h2>
+      <p class="close-text">HAPPY BIRTHDAYY SEKALI LAGI, KA SUHAILAA. Semoga tahun ini membawa hari-hari yang bahagia, orang-orang yang tulus, dan begitu banyak alasan untuk tersenyum.</p>
+      <button class="btn-pill pink" id="btnWish">🎁 Tiup Lilin &amp; Berdoa</button>
+    </div>
+  </section>
+
+  <!-- SECTION 7 · GUESTBOOK (kini paling bawah, catatan kaki ikut di sini) -->
+  <section class="sec alt" id="guestbook">
+    <ul class="particles" data-particles="5" aria-hidden="true"></ul>
+    <div class="gb-card reveal">
+      <p class="sec-label">&mdash; Guestbook &amp; Reply &mdash;</p>
+      <h2 class="sec-title">Kirim Pesan Balasan 💬</h2>
+      <p class="sec-sub">Anu itu buat ini, yang kaya gitulah heheh/Tulis pesan manis atau ucapan terima kasihmu di sini...</p>
+      <textarea id="gbText" placeholder="Tulis pesan manis atau ucapan terima kasihmu di sini..."></textarea>
+      <button class="btn-pill green" id="gbSend">💬 Kirim Balasan via WhatsApp</button>
+    </div>
+  </section>
+</main>
+
+<!-- ============ MODAL · OPEN WHEN ============ -->
+<div class="modal-back" id="owModal" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true">
+    <button class="modal-close" data-close aria-label="Tutup">&#10005;</button>
+    <div class="m-emoji" id="owEmoji" aria-hidden="true"></div>
+    <h3 class="m-title" id="owTitle"></h3>
+    <p class="m-body" id="owBody"></p>
+    <button class="btn-pill green m-btn" data-close>Tutup Surat ✨</button>
+  </div>
+</div>
+
+<!-- ============ MODAL · MAKE A WISH ============ -->
+<div class="modal-back" id="wishModal" aria-hidden="true">
+  <div class="modal wish" role="dialog" aria-modal="true">
+    <div class="confetti" id="confettiLayer" aria-hidden="true"></div>
+    <button class="modal-close" data-close aria-label="Tutup">&#10005;</button>
+    <p class="wish-label">✧ MAKE A WISH ✧</p>
+    <h3 class="m-title">Tiup Lilinnya</h3>
+    <div class="cake-zone" id="cakeZone">
+      <svg class="cake" viewBox="0 0 200 170" aria-hidden="true">
+        <ellipse cx="100" cy="152" rx="66" ry="10" fill="#ECDAC4" stroke="#DCD6C0"/>
+        <g id="cakeBody">
+          <rect x="42" y="104" width="116" height="42" rx="8" fill="#EC9FAC"/>
+          <path d="M42 112 q6 6 12 0 q6 6 12 0 q6 6 12 0 q6 6 12 0 q6 6 12 0 q6 6 12 0 q6 6 12 0 q6 6 12 0 q6 6 12 0 q6 6 12 0 v-8 h-116z" fill="#FDEBEF"/>
+          <rect x="56" y="76" width="88" height="32" rx="7" fill="#F3B6C2"/>
+          <path d="M56 84 q5.5 5.5 11 0 q5.5 5.5 11 0 q5.5 5.5 11 0 q5.5 5.5 11 0 q5.5 5.5 11 0 q5.5 5.5 11 0 q5.5 5.5 11 0 q5.5 5.5 11 0 q5.5 5.5 11 0 v-8 h-88z" fill="#FEF7E4"/>
+          <text x="100" y="128" text-anchor="middle" class="cake-text">Happy Birthday</text>
+        </g>
+        <g id="candle">
+          <rect x="96" y="40" width="8" height="40" rx="4" fill="#FEF7E4" stroke="#DCD6C0" stroke-width="1"/>
+          <path d="M99 42 h2 v38 h-2z" fill="#F8D0D8"/>
+          <path d="M100 40 v-6" stroke="#292E1E" stroke-width="1.6" stroke-linecap="round"/>
+        </g>
+        <g id="flame" class="flame">
+          <circle cx="100" cy="30" r="13" fill="transparent"/>
+          <path id="flameShape" d="M100 18 C105 25 106 29 106 32 a6 6 0 0 1 -12 0 c0-3 1-7 6-14z" fill="url(#gflame)"/>
+          <defs><radialGradient id="gflame" cx="50%" cy="65%" r="70%">
+            <stop offset="0%" stop-color="#FDF3D8"/><stop offset="55%" stop-color="#F0C467"/><stop offset="100%" stop-color="#E88C3A"/>
+          </radialGradient></defs>
+        </g>
+      </svg>
+      <div class="fx-layer" id="fxLayer" aria-hidden="true"></div>
+    </div>
+    <p class="wish-hint" id="wishHint">Ketuk api atau lilin untuk meniupnya 🎂</p>
+    <div class="wish-reveal" id="wishReveal">
+      <h4 class="wish-title">Semua Doa Terkabul</h4>
+      <p class="wish-msg">Semoga semua harapan yang tadi bisikkan dalam hati bisa menemukan jalannya untuk menjadi nyata. Jangan pernah berhenti berharap dan percaya pada hal-hal baik. Masih punya banyak hari indah yang menunggu untuk dijalani 💖</p>
+    </div>
+  </div>
+</div>
+
+<script src="app.js?v=8"></script>
+</body>
+</html>
