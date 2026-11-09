@@ -9,7 +9,7 @@ const BIRTHDAY_CONFIG = {
   senderName: "Hanif Muslim",
   birthdayDate: "10 November",
   targetDateWIB: "2026-11-09T07:20:00+07:00", // 10 Nov 2026, 00.00 WIB
-  secretPIN: "101101",
+  secretPIN: "101110",
   whatsappNumber: "6283836567878", // ⚠️ GANTI dengan nomor WhatsApp kamu
   playlist: [
     { title: "About You",  artist: "The 1975", src: "assets/1975.mp3",    chorusStart: 20 },
@@ -55,27 +55,28 @@ const FLOWER_EMOJI = {
 
 /* Daftar bunga buket (posisi %, ukuran, quote persis sesuai spesifikasi) */
 const BOUQUET_FLOWERS = [
-  { key: "rose",      name: "Rose",           pos: [10, 30], size: 62,
-    quote: `Seperti mawar yang tetap tumbuh di antara duri, semoga ka shuaa selalu ada kekuatan untuk melewati semua tantangan kesulitan dan tetap mekar dengan indah 🌹.` },
-  { key: "tulip",     name: "Tulip",          pos: [27, 8],  size: 54,
-    quote: `Nggak perlu buru-buru ngejar semuanya. Setiap orang punya waktunya masing-masing untuk berkembang. Tetap semangat, nikmati prosesnya, dan jangan lupa kasih diri sendiri waktu untuk istirahat juga. 🌷` },
-  { key: "sakura",    name: "Cherry Blossom", pos: [50, 0],  size: 50,
-    quote: `Seperti bunga sakura yang mekar hanya sementara, jangan lupa menikmati setiap momen indah dalam hidup. Nggak semua hal harus bertahan selamanya untuk bisa dikenang. 🌸` },
-  { key: "peony",     name: "Peony",          pos: [71, 10], size: 60,
-    quote: `Kayak bunga kembang sepatu yang lagi mekar penuh, senyum ka shua selalu ceria dan bersinar. 🌺` },
-  { key: "daisy",     name: "Daisy",          pos: [90, 30], size: 46,
-    quote: `Ka shua itu kayak bunga aster, sederhana tapi selalu ada cara sendiri buat bikin suasana hati jadi lebih menyenangkan. Tetap jadi diri sendiri yang ceria, ya! 🌼` },
-  { key: "sunflower", name: "Sunflower",      pos: [38, 36], size: 56,
-    quote: `Semoga ka shua selalu ada alasan buat bangkit setiap kali hari terasa berat. Nggak harus selalu ceria, yang penting jangan kehilangan semangat untuk mencari hal-hal baik di sekitarmu. 🌻` },
-  { key: "lily",      name: "Lily",           pos: [64, 42], size: 52,
-    quote: `Aku harap ka shua punya banyak hal - hal baik buat ditemuin. Aku doain hari-hari ka shua dipenuhi cerita menyenangkan, orang-orang baik, dan kebahagiaan kecil yang datang tanpa disangka. 💐` }
+  { key: "rose",      name: "Rose",           pos: [10, 30], size: 33,
+    quote: `Seperti mawar yang tetap tumbuh di antara duri, semoga ka shua selalu ada kekuatan buat lewatin semua tantangan kesulitan dan tetap mekar dengan indah.` },
+  { key: "tulip",     name: "Tulip",          pos: [27, 8],  size: 35,
+    quote: `Nggak perlu buru-buru ngejar semuanya. Setiap orang punya waktunya masing-masing untuk berkembang. Tetap semangat, nikmati prosesnya, dan jangan lupa kasih diri sendiri waktu untuk istirahat juga.` },
+  { key: "sakura",    name: "Cherry Blossom", pos: [50, 0],  size: 36,
+    quote: `Seperti bunga sakura yang mekar hanya sementara, jangan lupa menikmati setiap momen indah dalam hidup. Nggak semua hal harus bertahan selamanya untuk bisa dikenang.` },
+  { key: "peony",     name: "Peony",          pos: [71, 10], size: 34,
+    quote: `Kayak bunga kembang sepatu yang lagi mekar penuh, senyum ka shua selalu ceria dan bersinar.` },
+  { key: "daisy",     name: "Daisy",          pos: [90, 30], size: 37,
+    quote: `Ka shua itu kayak bunga daisy, sederhana tapi selalu ada cara sendiri buat bikin suasana hati jadi lebih menyenangkan. Tetap jadi diri sendiri yang ceria yaaa!` },
+  { key: "sunflower", name: "Sunflower",      pos: [38, 36], size: 35,
+    quote: `Semoga ka shua selalu ada alasan buat bangkit setiap kali hari terasa berat. Nggak harus selalu ceria, yang penting jangan kehilangan semangat untuk mencari hal-hal baik di sekitarmu.` },
+  { key: "lily",      name: "Lily",           pos: [64, 42], size: 33,
+    quote: `Aku harap ka shua punya banyak hal - hal baik buat ditemuin. Aku doain hari-hari ka shua dipenuhi cerita menyenangkan, orang-orang baik, dan kebahagiaan kecil yang datang tanpa disangka.` }
 ];
 
 /* ============ 4. PARTIKEL BUNGA MELAYANG ============ */
 function flowerIconList() {
   return [
     { petal: pick(PINKS),  center: "#FDF6E7" },
-    { petal: pick(CREAMS), center: "#2C5340" },
+    /* kuning/emas — cream dihapus karena nyaris menyatu dgn background (th. revisi amplop) */
+    { petal: pick(["#F2DF97", "#F4E6A8", "#E2B451"]), center: "#2C5340" },
     { petal: pick(PINKS),  center: "#F9E9C1" }
   ];
 }
@@ -255,7 +256,8 @@ function openEnvelope() {
       p.style.setProperty("--ty", rnd(-330, -60).toFixed(0) + "px");
       p.style.setProperty("--rr", rnd(-160, 160).toFixed(0) + "deg");
       p.style.animationDelay = rnd(0, .25).toFixed(2) + "s";
-      p.innerHTML = makeFlower({ size: s, petal: pick(["#F8D0D8", "#F5B7C2", "#FDEBEF", "#F9E9C1"]), center: "#FEF7E4" });
+      /* cream (#F9E9C1) & pink putih pucat (#FDEBEF) diganti kuning/coklat muda — jangan menyatu dgn bg (th. revisi amplop) */
+      p.innerHTML = makeFlower({ size: s, petal: pick(["#F8D0D8", "#F5B7C2", "#F2DF97", "#ECDAC4"]), center: "#FEF7E4" });
       layer.appendChild(p);
       setTimeout(() => p.remove(), 2600);
     }
@@ -400,7 +402,7 @@ BOUQUET_FLOWERS.forEach(f => {
     q.classList.add("swap");
     setTimeout(() => {
       $("#quoteText").textContent = `“${f.quote}”`;
-      $("#quoteName").textContent = `— ${f.name} —`;
+      $("#quoteName").textContent = f.name;
       q.classList.remove("swap");
     }, 300);
   });
@@ -428,12 +430,12 @@ function spawnMiniFlowers(btn) {
 
 /* ============ 12. MODAL OPEN-WHEN ============ */
 const OW_CONTENT = {
-  sedih: { emoji: "😢", title: "Isi Pesan Surat",
-    body: `Haloo… kalo buka surat ini, barti hari ini lagi kerasa berat, yaaa. Aku cuma mau bilang, Ingat kalau ka shuaa engga pernah sendirian. Semua perasaan lelah dan sedih itu valid, tapi jangan biarkan ia menetap terlalu lama. Tarik napas panjang, istirahat dulu, Pelan-pelan aja, nggak perlu memaksakan semuanya harus selesai hari ini. Semoga besok jadi hari yang lebih baik dan selalu punya semangat untuk lewati apa pun. Jangan lupa apresiasi diri sendiri karena sudah berusaha sejauh ini. 🤍` },
-  insecure: { emoji: "😔", title: "Isi Pesan Surat",
-    body: `Hei Heii, kok bisa bisanya orang sebaik dan secantik bidadari ini ngerasa insecure. Jangan terlalu keras sama diri sendiri yaaa. Ka shua nggak harus jadi kayak orang lain buat keliatan menarik. Jadi diri sendiri juga udah lebih dari cukup. Nggak perlu terus ngebandingin diri sendiri sama standar orang lain. Coba sesekali lihat dari sudut pandang orang-orang yang menyayangimu. Mungkin kamu akan sadar kalau ada banyak hal baik dalam dirimu yang selama ini sering kamu abaikan. Jangan lupa untuk menghargai dan menyayangi diri sendiri juga, ya. 🌷` },
-  capek: { emoji: "😫", title: "Isi Pesan Surat",
-    body: `Kalo ka shua lagi ngerasa capek ada akuu yang siap dengerin semua cerita keluh kesah, mau marah, mau sedih, mau emosi apapun segalanya aku siap dengerin. Siap selalu sedia buat ngevalidasi perasaan sedih itu biar ga terlalu numpuk. Juga jangan terlalu keras sama diri sendiri yaa. Makan yang enak, tidur yang cukup, terus biarin hari ini selesai tanpa beban yang seharusnya bukan milik sendiri. 🤍` }
+  sedih: { title: "Untuk Hari-Hari Yang Terasa Berat",
+    body: `Haloo… kalo buka surat ini, barti hari ini lagi kerasa berat yaa. Aku cuma mau bilang, inget kalo ka shua engga pernah sendirian. Semua perasaan lelah dan sedih itu valid, tapi jangan biarkan perasaan itu menetap terlalu lama. Tarik napas panjang, istirahat dulu, Pelan-pelan aja, nggak perlu memaksakan semuanya harus selesai hari ini. Semoga besok jadi hari yang lebih baik dan selalu punya semangat untuk lewati apa pun. Jangan lupa apresiasi diri sendiri karena sudah berusaha sejauh ini. 🤍` },
+  insecure: { title: "Saat Kamu Mulai Meragukan Dirimu Sendiri",
+    body: `Hei Heii, kok bisa bisanya orang sebaik dan secantik bidadari ini ngerasa insecure. Jangan terlalu keras sama diri sendiri yaa. Ka shua nggak harus jadi kayak orang lain buat keliatan menarik. Jadi diri sendiri juga udah lebih dari cukup. Nggak perlu terus ngebandingin diri sendiri sama standar orang lain. Coba sesekali lihat dari sudut pandang orang-orang yang sayang sama ka shua. Mungkin bakal sadar kalo ada banyak hal baik dalam dirimu yang selama ini sering diabaikan. Jangan lupa untuk menghargai dan menyayangi diri sendiri juga yaa. 🌷` },
+  capek: { title: "Pengingat Buat Kamu Yang Selalu Berjuang",
+    body: `Kalo ka shua lagi ngerasa capek ada aku yang siap dengerin semua cerita keluh kesah, mau marah, mau sedih, mau emosi apapun segalanya aku siap dengerin. Siap selalu sedia buat ngevalidasi perasaan emosi itu biar ga terlalu numpuk. Makan yang enak, tidur yang cukup. Pelan-pelan aja yaa, nggak semua hal harus di hadapin sekaligus, terus biarin hari ini selesai tanpa beban yang seharusnya bukan milik sendiri. 🤍` }
 };
 const owModal = $("#owModal");
 $$(".ow-card").forEach(card => card.addEventListener("click", () => {

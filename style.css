@@ -39,7 +39,10 @@ body.unlocked ::-webkit-scrollbar-track{background:transparent}
   transition:opacity .9s var(--cubic),visibility .9s}
 .stage.active{opacity:1;visibility:visible;pointer-events:auto}
 #stage-load{z-index:400;background:radial-gradient(circle at 50% 30%,var(--bg-main),#FBF0D9)}
-#stage-pin{z-index:300;background:linear-gradient(165deg,var(--bg-main) 0%,var(--bg-secondary) 100%)}
+#stage-pin{z-index:300;background:
+  radial-gradient(52% 40% at 50% 34%,rgba(246,231,203,.42),rgba(246,231,203,0) 74%),
+  radial-gradient(34% 22% at 14% 6%,rgba(248,208,216,.14),rgba(248,208,216,0) 72%),
+  linear-gradient(180deg,var(--bg-main) 0%,#FAF1DC 60%,#F1E6CE 100%)}
 #stage-count{z-index:200;background:linear-gradient(180deg,var(--bg-main),var(--bg-secondary))}
 #stage-envelope{z-index:150;background:radial-gradient(circle at 50% 42%,var(--bg-main) 40%,var(--bg-secondary) 130%)}
 #floralOverlay{position:fixed;inset:0;z-index:410;background:
@@ -71,32 +74,36 @@ body.unlocked ::-webkit-scrollbar-track{background:transparent}
 /* ==================== STAGE 2 · PIN ==================== */
 .pin-wrap{position:relative;z-index:1;padding:70px 18px 30px}
 .pin-badge{position:absolute;top:-40px;left:50%;width:76px;height:76px;z-index:3;
-  filter:drop-shadow(0 7px 12px rgba(41,46,30,.2));animation:badgeFloat 3.8s ease-in-out infinite}
+  filter:drop-shadow(0 10px 16px rgba(101,74,40,.28)) drop-shadow(0 0 14px rgba(255,224,166,.55)) drop-shadow(0 1px 1px rgba(255,255,255,.6));
+  animation:badgeFloat 3.8s ease-in-out infinite}
 .pin-badge svg{width:100%;height:100%}
 @keyframes badgeFloat{
   0%,100%{transform:translate(-50%,0) rotate(-5deg)}
   50%{transform:translate(-50%,-8px) rotate(4deg)}
 }
 .pin-card{position:relative;width:min(82vw,320px);padding:50px 18px 24px;text-align:center;
-  background:rgba(235, 215, 180, 0.55);
-  border:1px solid rgba(255, 255, 255, 0.45);
-  border-top-color:rgba(255,255,255,.0.8);
+  background:linear-gradient(158deg,rgba(243,225,192,.96) 0%,rgba(233,210,172,.94) 48%,rgba(223,198,157,.96) 100%);
+  border:1px solid rgba(255,250,238,.78);
   border-radius:26px;
-  box-shadow:0 20px 45px rgba(60, 45, 25, 0.2),
-              inset 0 1px 2px rgba(255, 255, 255, 0.7),
-              inset 0 -20px 40px rgba(180, 150, 110, 0.2);
-  backdrop-filter:blur(20px) saturate(1.2);-webkit-backdrop-filter:blur(20px) saturate(1.2)}
-/* kilau glossy kaca translucent */
+  box-shadow:0 26px 54px rgba(101,74,40,.2),
+              0 10px 22px rgba(101,74,40,.12),
+              inset 0 1.6px 2px rgba(255,255,255,.9),
+              inset 1px 0 1.5px rgba(255,255,255,.38),
+              inset -1px 0 1.5px rgba(255,255,255,.38),
+              inset 0 -20px 38px rgba(172,140,96,.18);
+  backdrop-filter:blur(16px) saturate(1.15);-webkit-backdrop-filter:blur(16px) saturate(1.15)}
+/* kilau glossy kaca champagne + tekstur kaca frosted yang sangat tipis */
 .pin-card::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
   background:
-   radial-gradient(130% 85% at 50% -22%,rgba(255,255,255,.35),rgba(255,255,255,0) 55%),
+   radial-gradient(120% 72% at 50% -18%,rgba(255,255,255,.5),rgba(255,255,255,0) 52%),
    linear-gradient(118deg,
-     rgba(255,255,255,.38) 0%,
-     rgba(255,255,255,.15) 22%,
-     rgba(255,255,255,0) 38%,
-     rgba(255,255,255,0) 58%,
-     rgba(255,255,255,.12) 76%,
-     rgba(255,255,255,.03) 100%)}
+     rgba(255,255,255,.32) 0%,
+     rgba(255,255,255,.12) 20%,
+     rgba(255,255,255,0) 37%,
+     rgba(255,255,255,0) 60%,
+     rgba(255,255,255,.09) 78%,
+     rgba(255,255,255,.02) 100%),
+   repeating-linear-gradient(90deg,rgba(255,255,255,.026) 0 2px,rgba(255,255,255,0) 2px 5px)}
 .pin-card>*{position:relative;z-index:1}
 .pin-card.shake{animation:shakeX .55s var(--cubic) both}
 @keyframes shakeX{
@@ -104,28 +111,37 @@ body.unlocked ::-webkit-scrollbar-track{background:transparent}
   30%,50%,70%{transform:translateX(-8px)}40%,60%{transform:translateX(8px)}
 }
 .pin-title{font-family:var(--serif);font-weight:500;font-size:clamp(24px,6vw,30px);
-  color:#000;letter-spacing:.01em}
+  color:var(--text-main);letter-spacing:.01em}
 .pin-sub{margin-top:7px;font-size:12.5px;font-weight:300;letter-spacing:.2em;
   text-transform:uppercase;color:rgba(30,65,45,.72)}
 .pin-dots{display:flex;justify-content:center;gap:15px;margin:28px 0 6px}
-.dot{width:10px;height:10px;border-radius:50%;border:1.6px solid rgba(30,65,45,.55);
-  transition:all .25s var(--cubic)}
-.dot.filled{background:var(--accent-pink);border-color:var(--accent-green);
-  transform:scale(1.2);box-shadow:0 0 0 4px rgba(248,208,216,.38)}
+.dot{width:10px;height:10px;border-radius:50%;border:1.4px solid rgba(30,65,45,.5);
+  background:rgba(255,255,255,.1);
+  transition:all .3s var(--cubic)}
+.dot.filled{background:var(--pink-deep);border-color:rgba(30,65,45,.45);
+  transform:scale(1.18);box-shadow:0 0 0 4px rgba(248,208,216,.45),inset 0 1px 1px rgba(255,255,255,.65)}
 .keypad{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px;max-width:250px;margin-inline:auto}
 .key{aspect-ratio:1;border-radius:50%;display:flex;align-items:center;justify-content:center;
-  background:rgba(254,247,228,.26);
-  border:1px solid rgba(255,255,255,.4);border-top-color:rgba(255,255,255,.6);
-  color:var(--accent-green);font-family:var(--serif);font-size:21px;
-  box-shadow:0 6px 14px rgba(41,46,30,.08),inset 0 1px 1px rgba(255,255,255,.55);
-  backdrop-filter:blur(14px) saturate(1.25);-webkit-backdrop-filter:blur(14px) saturate(1.25);
+  background:linear-gradient(180deg,#FEFAEF 0%,#FBF3E0 55%,#F3E7CE 100%);
+  border:1px solid rgba(255,252,242,.9);
+  color:#41472B;font-family:var(--serif);font-size:21px;
+  box-shadow:0 7px 14px rgba(101,72,40,.16),0 2px 5px rgba(101,72,40,.08),
+    inset 0 1.5px 1.5px rgba(255,255,255,.95),
+    inset 0 -8px 12px rgba(184,152,106,.14);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
   transition:all .22s var(--cubic)}
-.key:hover{background:rgba(244, 187, 226, 0.45);transform:translateY(-3px)}
-.key:active{transform:scale(.88);background:rgba(254,247,228,.55)}
-.key.enter{background:rgba(250, 245, 249, 0.55);
-  border-color:rgba(255,255,255,.55);font-size:20px}
-.key.enter:hover{background:rgba(248,208,216,.75)}
-.pin-hint{margin-top:22px;font-family:var(--serif2);font-style:italic;font-size:15px;color:rgba(41,46,30,.55)}
+.key:hover{border-color:rgba(236,159,172,.85);
+  box-shadow:0 8px 16px rgba(101,72,40,.16),0 0 0 4px rgba(248,208,216,.32),
+    inset 0 1.5px 1.5px rgba(255,255,255,.95),inset 0 -8px 12px rgba(184,152,106,.14);
+  transform:scale(1.07)}
+.key:active{transform:scale(.9);
+  box-shadow:0 3px 8px rgba(101,72,40,.14),
+    inset 0 1.5px 1.5px rgba(255,255,255,.9),inset 0 -6px 10px rgba(184,152,106,.16)}
+.key.enter{background:linear-gradient(180deg,#FEFAF3 0%,#F9EFDC 55%,#F1E5CC 100%);
+  border-color:rgba(255,255,255,.7);font-size:20px}
+.key.enter:hover{border-color:rgba(236,159,172,.9);
+  background:linear-gradient(180deg,#FDEFF2 0%,#FBE4E9 60%,#F5DCE1 100%)}
+.pin-hint{margin-top:26px;font-family:var(--serif2);font-style:italic;font-size:15px;color:rgba(93,113,84,.78)}
 /* ==================== STAGE 3 · COUNTDOWN ==================== */
 .count-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;
   padding:36px 20px;text-align:center}
@@ -374,7 +390,7 @@ svg[hidden]{display:none!important}
   100%{transform:translate(calc(-50% + var(--dx,0px)),calc(-50% + var(--dy,-40px))) scale(1) rotate(var(--rot,120deg));opacity:0}
 }
 .b-stems{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:46%;z-index:1}
-.b-quote{position:relative;z-index:1;min-height:110px;width:min(94vw,560px);margin-top:6px;
+.b-quote{position:relative;z-index:1;min-height:110px;width:min(94vw,560px);margin-top:32px;
   background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:22px;
   padding:26px 30px;box-shadow:var(--shadow-soft);backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);display:flex;flex-direction:column;align-items:center;
@@ -548,7 +564,8 @@ svg[hidden]{display:none!important}
   .pin-dots{gap:12px;margin:22px 0 4px}
   .dot{width:11px;height:11px}
   .keypad{gap:11px;max-width:268px;margin-top:16px}
-  .key{font-size:19px;box-shadow:0 4px 10px rgba(41,46,30,.05)}
+  .key{font-size:19px;box-shadow:0 6px 12px rgba(101,72,40,.14),0 2px 4px rgba(101,72,40,.08),
+    inset 0 1.5px 1.5px rgba(255,255,255,.95),inset 0 -7px 10px rgba(184,152,106,.14)}
   .pin-hint{margin-top:18px;font-size:13px}
   /* --- countdown --- */
   .count-env{width:150px}
