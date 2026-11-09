@@ -8,7 +8,7 @@ const BIRTHDAY_CONFIG = {
   recipientName: "Suhaila",
   senderName: "Hanif Muslim",
   birthdayDate: "10 November",
-  targetDateWIB: "2026-11-9T07:15:00+07:00", // 10 Nov 2026, 00.00 WIB
+  targetDateWIB: "2026-11-09T07:20:00+07:00", // 10 Nov 2026, 00.00 WIB
   secretPIN: "101101",
   whatsappNumber: "6283836567878", // ⚠️ GANTI dengan nomor WhatsApp kamu
   playlist: [
